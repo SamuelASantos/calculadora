@@ -16,6 +16,10 @@ function clicked(button) {
     switch (button) {
         case "c":
             // Limpa tudo
+            let displayOn = document.getElementsByClassName("disable");
+            for (let i = 0; i < displayOn.length; i++) {
+                displayOn[i].disabled = false;
+            }
             reset();
             break;
         case "÷":
@@ -23,6 +27,10 @@ function clicked(button) {
         case "+":
         case "-":
             // Escolhe operações
+            if (firstValue !== '') {
+                operator = button;
+                currentValue = 2;
+            }
             break;
         case "0":
         case "1":
@@ -53,9 +61,15 @@ function clicked(button) {
             break;
         case "=":
             // Exibe o resultado da conta no display
+            if (secondValue !== '' && currentValue === 2) {
+                let result = calculate(firstValue, operator, secondValue);
+                reset();
+                firstValue = result;
+            }
             break;
         default:
             // Caso algo diferente seja digitado exibir o erro
+            alert('Erro. Digite um valor válido.')
             break;
     }
 
@@ -67,5 +81,30 @@ function updateDisplay() {
         display.innerHTML = '0';
     } else {
         display.innerHTML = firstValue + operator + secondValue;
+    }
+}
+
+function calculate(first, op, second) {
+    first = parseFloat(first);
+    second = parseFloat(second);
+
+    switch (op) {
+        case '÷':
+            if (second === 0) {
+                let displayOff = document.getElementsByClassName("disable");
+                for (let i = 0; i < displayOff.length; i++) {
+                    displayOff[i].disabled = true;
+                }
+                return 'Inválido'
+            }
+            return first / second;
+        case '×':
+            return first * second;
+        case '+':
+            return first + second;
+        case '-':
+            return first - second;
+        default:
+            return 0;
     }
 }
