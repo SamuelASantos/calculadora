@@ -57,9 +57,9 @@ Esta calculadora foi criada como parte de um projeto acadêmico para demonstrar 
 
 ## 📞 Contato
 
-- [LinkedIn](https://www.linkedin.com/in/samuel-santos-784b18177/{:target="_blank"})   
-- [Site Pessoal](https://www.samsantos.com.br{:target="_blank"} ) 
-- [Email](mailto:samuel_a_santos@hotmail.com{:target="_blank"})
+- <a href="https://www.linkedin.com/in/samuel-santos-784b18177/" target="_blank">LinkedIn</a>
+- <a href="https://www.samsantos.com.br" target="_blank">Site Pessoal</a>
+- <a href="mailto:samuel_a_santos@hotmail.com" target="_blank">E-mail</a>
 
 ---
 
