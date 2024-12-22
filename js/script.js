@@ -35,10 +35,21 @@ function clicked(button) {
         case "8":
         case "9":
             // Exibe os números
+            if (currentValue === 1) {
+                firstValue += button;
+            }
+            if (currentValue === 2) {
+                secondValue += button;
+            }
             break;
         case ".":
-            // Verificar se já tem um primeiro número digitado
-            // Verificar se já existe um outro ponto
+            // Verificar se já tem um primeiro número digitado e se já existe um outro ponto
+            if (currentValue === 1 && firstValue != '' && !firstValue.includes('.')) {
+                firstValue += button;
+            }
+            if (currentValue === 2 && secondValue != '' && !secondValue.includes('.')) {
+                secondValue += button;
+            }
             break;
         case "=":
             // Exibe o resultado da conta no display
